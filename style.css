@@ -1,4 +1,8 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     font-family: Arial, sans-serif;
@@ -14,7 +18,153 @@ body {
     background: white;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* ... остальной CSS без изменений ... */
+h1 {
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #333;
+}
+
+.controls {
+    margin-bottom: 30px;
+}
+
+.search-box {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    background: #f0f0f0;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.filter-btn:hover {
+    background: #e0e0e0;
+}
+
+.filter-btn.active {
+    background: #333;
+    color: white;
+    border-color: #333;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #333;
+    color: white;
+    border-radius: 4px;
+}
+
+.rule-card {
+    background: #fafafa;
+    border-left: 4px solid #333;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.rule-card.hidden {
+    display: none;
+}
+
+.rule-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.rule-decision {
+    background: #e8f5e9;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border-left: 3px solid #4caf50;
+}
+
+.rule-links {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.rule-links a {
+    color: #1976d2;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.rule-links a:hover {
+    text-decoration: underline;
+}
+
+.tags {
+    margin-top: 10px;
+}
+
+.tag {
+    display: inline-block;
+    background: #e0e0e0;
+    padding: 4px 8px;
+    margin-right: 5px;
+    font-size: 12px;
+    border-radius: 3px;
+}
+
+.no-results {
+    text-align: center;
+    padding: 40px;
+    color: #999;
+    display: none;
+}
+
+.page-title {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 3px solid #333;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.page-title .subtitle {
+    display: block;
+    font-size: 16px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.author-link {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #1976d2;
+    text-decoration: none;
+}
+
+.author-link:hover {
+    text-decoration: underline;
+    color: #125699;
+}
