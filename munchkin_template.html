@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Манчкин — База знаний</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Манчкин — База знаний и спорные моменты</h1>
+
+        <div class="controls">
+            <input type="text" id="searchBox" class="search-box" placeholder="Поиск по тексту или решению...">
+            <div class="filters">
+                <button class="filter-btn active" data-section="all">Все</button>
+                {% for section in categories if not section.startswith('Карта:') %}
+                <button class="filter-btn" data-section="{{ section }}">{{ section }}</button>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div id="content">
+            {% for section, rules_list in grouped.items() %}
+            <div class="section" data-section="{{ section }}">
+                <h2 class="section-title">{{ section }}</h2>
+                {% for rule in rules_list %}
+                <div class="rule-card" data-rule-id="{{ rule.id }}">
+                    <div class="rule-title">{{ rule.title }}</div>
+
+                    {% if rule.decision %}
+                    <div class="rule-decision"><strong>Решение:</strong> {{ rule.decision }}</div>
+                    {% endif %}
+
+                    {% if rule.links %}
+                    <div class="rule-links">
+                        {% for link in rule.links %}
+                        <a href="{{ link.url }}" target="_blank">{{ link.text }}</a>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+
+                    {% if rule.tags or rule.cards %}
+                    <div class="tags">
+                        {% for tag in rule.tags %}
+                        <span class="tag">{{ tag }}</span>
+                        {% endfor %}
+                        {% for card in rule.cards %}
+                        <span class="tag">Карта: {{ card }}</span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="no-results" id="noResults">Ничего не найдено</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
